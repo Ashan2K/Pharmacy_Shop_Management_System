@@ -18,6 +18,8 @@ import RemortCustomer.RemoteCustomerOrderShippingDetails;
 import SalesTransaction.Sales;
 
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -38,6 +40,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import medicine.Medicine;
 
 import java.io.File;
@@ -2062,8 +2065,8 @@ public class MainAppController implements Initializable {
 
 
 
-
-
+@FXML
+private Label dateTimeLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -2073,6 +2076,18 @@ public class MainAppController implements Initializable {
         RCO_M_ADD_BTN.setDisable(true);
         RCOrderID();
         RCO_PLACR_ORDER.setDisable(true);
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        // Create a Timeline to update the date and time every second
+        Timeline clock = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+            String formattedDateTime = LocalDateTime.now().format(formatter);
+            dateTimeLabel.setText(formattedDateTime);
+        }));
+
+        // Make the timeline run indefinitely
+        clock.setCycleCount(Timeline.INDEFINITE);
+        clock.play();
 }
 
 //      public void textMethod(){
