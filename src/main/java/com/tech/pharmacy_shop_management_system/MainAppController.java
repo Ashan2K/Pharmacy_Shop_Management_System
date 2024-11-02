@@ -688,12 +688,12 @@ public class MainAppController implements Initializable {
                      UserManageBackground.setVisible(false);
 
               }else if(event.getSource() ==RCOPaymentBtn){ // navigate into remote customer payment page
-                    // System.out.println("hi");
+                    //System.out.println("hi");
                      RCOManagePanel.setVisible(false);
                      WEB_VIEW.setVisible(false);
                      RCOPaymentPanel.setVisible(true);
 
-                     PM_PYAMENT_BTN.setDisable(true);
+                     //PM_PYAMENT_BTN.setDisable(true);
                      ShowPData();
 
                      DCOBackground.setVisible(false);
@@ -814,11 +814,12 @@ public class MainAppController implements Initializable {
           // get data from rcoshippingdetail table in db.
     public ObservableList<RemoteCustomerOrderMedicineDetails> getData(){
 
-        String sql = "SELECT rcoshippingdetail.orderID, rcoshippingdetail.name, " +
-                "rcoshippingdetail.address,rcoshippingdetail.phoneNo,rcoshippingdetail.dateAndTime, " +
-                "SUM(rcomedicinedetail.price) as price FROM rcoshippingdetail INNER JOIN rcomedicinedetail " +
-                "ON rcoshippingdetail.orderID = rcomedicinedetail.RCOID GROUP BY rcoshippingdetail.orderID";
-
+        String sql = "SELECT rcoshippingdetail.orderID, MAX(rcoshippingdetail.name) as name, " +
+                "MAX(rcoshippingdetail.address) as address, MAX(rcoshippingdetail.phoneNo) as phoneNo, " +
+                "MAX(rcoshippingdetail.dateAndTime) as dateAndTime, SUM(rcomedicinedetail.price) as price " +
+                "FROM rcoshippingdetail " +
+                "INNER JOIN rcomedicinedetail ON rcoshippingdetail.orderID = rcomedicinedetail.sequenceID " +
+                "GROUP BY rcoshippingdetail.orderID";
 
         ObservableList<RemoteCustomerOrderMedicineDetails> listData = FXCollections.observableArrayList();
         connect = DatabaseConnection.ConnectionDB();
