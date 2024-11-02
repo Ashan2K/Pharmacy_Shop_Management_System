@@ -730,7 +730,46 @@ public class MainAppController implements Initializable {
                      UserManageBackground.setVisible(true);
                      StaffManageBackground.setVisible(true);
                      AdminManageBackground.setVisible(false);
-                 }else if(event.getSource()==UserManageStaffButton){ // navigate into Staff Manage page
+                 }else if (event.getSource()== purchasebtn) {
+                     RCOManagePanel.setVisible(false);
+                     WEB_VIEW.setVisible(false);
+                     RCOPaymentPanel.setVisible(false);
+                     DCOBackground.setVisible(false);
+                     UserManageBackground.setVisible(false);
+
+                     purchaseAp.setVisible(true);
+                     placePurchaseAP.setVisible(false);
+                     completePurchaseAP.setVisible(false);
+
+
+
+
+                 } else if (event.getSource()== cpbtn) {
+
+                     //purchaseAp.setVisible(true);
+                     placePurchasetbl.setVisible(false);
+                     placePurchaseAP.setVisible(false);
+                     completePurchaseTbl.setVisible(false);
+                     completePurchaseAP.setVisible(false);
+
+
+                 }
+                 else if (event.getSource()== ppbtn) {
+
+                     RCOManagePanel.setVisible(false);
+                     WEB_VIEW.setVisible(false);
+                     RCOPaymentPanel.setVisible(false);
+                     DCOBackground.setVisible(false);
+                     UserManageBackground.setVisible(false);
+
+                     //purchaseAp.setVisible(true);
+                     placePurchasetbl.setVisible(true);
+                     placePurchaseAP.setVisible(true);
+                     //completePurchaseTbl.setVisible(false);
+                     completePurchaseAP.setVisible(false);
+
+                 }
+                 else if(event.getSource()==UserManageStaffButton){ // navigate into Staff Manage page
                      getStaff();
 
                      DCOBackground.setVisible(false);

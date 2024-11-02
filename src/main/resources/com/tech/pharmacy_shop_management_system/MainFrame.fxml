@@ -38,11 +38,18 @@
                <styleClass>
                   <String fx:value="radius" />
                   <String fx:value="radius" />
-                  <!--<String fx:value="main-bg" />-->
+                  <String fx:value="main-bg" />
                </styleClass>
+               <ImageView layoutY="20" fitWidth="70.0" fitHeight="70.0"  AnchorPane.rightAnchor="50">
+               <image>
+                  <Image url="@Icones/icons8-pharmacy-48.png " />
+               </image>
+               </ImageView>
+
+
                <!--<children>
                   <Label layoutX="35.0" layoutY="3.0" prefHeight="78.0" prefWidth="98.0" styleClass="admin-icon" stylesheets="@Style/mainFormDesign.css" />
-                  <Label layoutX="-1.0" layoutY="87.0" prefHeight="18.0" prefWidth="174.0" text="            Hi, Ashan" />
+
                   <Circle fill="#2dea7f" layoutX="108.0" layoutY="99.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
                </children>-->
             </AnchorPane>
@@ -57,13 +64,21 @@
             <Button fx:id="purchasebtn" layoutX="17.0" layoutY="572.0" mnemonicParsing="false" onAction="#controlPanel" prefHeight="42.0" prefWidth="167.0" styleClass="nav-btn" stylesheets="@Style/mainFormDesign.css" text="Purchase" />
 
             <Button fx:id="UserManageButton" layoutX="16.0" layoutY="507.0" mnemonicParsing="false" onAction="#controlPanel" prefHeight="42.0" prefWidth="167.0" styleClass="nav-btn" stylesheets="@Style/mainFormDesign.css" text="User Manage" />
-            <Button layoutX="17.0" layoutY="572.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="167.0" styleClass="nav-btn" stylesheets="@Style/mainFormDesign.css" text="Purchase" />
-
+            <!--<Button layoutX="17.0" layoutY="572.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="167.0" styleClass="nav-btn" stylesheets="@Style/mainFormDesign.css" text="Purchase" />
+-->
          </children>
+         <ImageView fx:id="signOutIcon" onMouseClicked="#handleSignOut"   layoutY="650" fitWidth="50.0" fitHeight="50.0"  AnchorPane.rightAnchor="80">
+            <image>
+               <Image url="@Icones/Signout.png " />
+            </image>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </ImageView>
          <!--<AnchorPane layoutX="15" layoutY="650" prefHeight="22.0" prefWidth="167.0"  stylesheets="@Style/mainFormDesign.css" AnchorPane.bottomAnchor="-5.399999999999999" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="-3.2000000000000455">-->
             <children>
-               <Text fill="WHITE"  layoutY="650.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Solution by Group 08-"  AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="0.0" />
-               <Text fill="WHITE"  layoutY="670.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Version 1.0.0-"  AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="0.0" />
+               <Text fill="WHITE"  layoutY="750.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Solution by Group 08-"  AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="0.0" />
+               <Text fill="WHITE"  layoutY="770.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Version 1.0.0-"  AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="0.0" />
             </children>
 
       </AnchorPane>
@@ -75,25 +90,18 @@
             <String fx:value="shadow" />
          </styleClass>
          <children>
-            <Label prefHeight="58.0" prefWidth="49.0" styleClass="pharmacy-icon" stylesheets="@Style/mainFormDesign.css" />
+
             <Label layoutX="56.0" layoutY="13.0" prefHeight="33.0" prefWidth="343.0" text="Pharmacy Management System" textFill="#2f2e5e">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <Label fx:id="dateTimeLabel" layoutX="580.0" layoutY="37.0"   AnchorPane.rightAnchor="56.41695213317871">
+            <Label fx:id="dateTimeLabel" layoutX="580.0" layoutY="20.0"   AnchorPane.rightAnchor="56.41695213317871">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <ImageView fx:id="signOutIcon" onMouseClicked="#handleSignOut"  layoutX="853.0" layoutY="40.0" fitWidth="30.0" fitHeight="30.0"  AnchorPane.rightAnchor="25.8">
-               <image>
-                  <Image url="@Icones/Signout.png " />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
+
 
          </children>
       </AnchorPane>
@@ -120,9 +128,9 @@
      <!-- <AnchorPane fx:id="RCOManagePanel" layoutX="202.0" layoutY="81.0" prefHeight="539.0" prefWidth="924.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="81.0">
 -->
 
-  <!--    <AnchorPane fx:id="purchaseAp" layoutX="208.0" layoutY="81.0" prefHeight="547.0" prefWidth="916.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="81.0">
+ <AnchorPane fx:id="purchaseAp" layoutX="208.0" layoutY="81.0" visible="false" prefHeight="547.0" prefWidth="916.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="81.0">
          <children>
-            <AnchorPane fx:id="placePurchaseAP" layoutX="-2.0" layoutY="-6.0" prefHeight="507.0" prefWidth="512.0" stylesheets="@Style/mainFormDesign694.css" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="406.0" AnchorPane.topAnchor="-6.0">
+            <AnchorPane fx:id="placePurchaseAP" visible="false" layoutX="-2.0" layoutY="-6.0" prefHeight="507.0" prefWidth="512.0" stylesheets="@Style/mainFormDesign694.css" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="406.0" AnchorPane.topAnchor="-6.0">
                <children>
                   <AnchorPane layoutX="-2.0" layoutY="228.0" prefHeight="250.0" prefWidth="491.0" stylesheets="@Style/mainFormDesign694.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="23.0">
                      <styleClass>
@@ -315,10 +323,126 @@
                   </styleClass>
                </Button>
             </AnchorPane>
-         </children>
-      </AnchorPane>-->
-            <AnchorPane fx:id="RCOManagePanel" layoutX="202.0" layoutY="81.0" prefHeight="539.0" prefWidth="924.0" visible="false" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="81.0">
 
+         <!--<TableView fx:id="cptbldetails" layoutX="21.0" layoutY="17.0" prefHeight="439.0" prefWidth="364.0" styleClass="radius" AnchorPane.bottomAnchor="74.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="17.0">
+                  <columns>
+                  <TableColumn fx:id="cpidtbl" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="cpnametbl" prefWidth="75.0" text="name" />
+                  <TableColumn fx:id="cpaddresstbl" prefWidth="75.0" text="address" />
+                  </columns>
+                  </TableView>-->
+          <AnchorPane fx:id="completePurchaseAP"  layoutX="-1.0" layoutY="-6.0"  prefHeight="507.0" prefWidth="512.0" stylesheets="@Style/mainFormDesign694.css" visible="false" AnchorPane.bottomAnchor="45.80000000000001" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="405.0" AnchorPane.topAnchor="-6.0">
+               <children>
+                  <AnchorPane layoutX="-2.0" layoutY="228.0" prefHeight="250.0" prefWidth="491.0" stylesheets="@Style/mainFormDesign694.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="23.0">
+                  <Button fx:id="PM_PYAMENT_BTN" layoutX="291.0" layoutY="235.0" mnemonicParsing="false" onAction="#updateSales" prefHeight="30.0" prefWidth="137.0" styleClass="btn" stylesheets="@Style/mainFormDesign.css" text="Complete Payment" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="37.0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="8.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total : " wrappingWidth="56.234375" AnchorPane.bottomAnchor="18.482421875" AnchorPane.leftAnchor="7.434375000000003">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="PM_TOTAL" layoutX="64.0" layoutY="235.0" prefHeight="34.0" prefWidth="118.0" text="0.00" AnchorPane.bottomAnchor="10.600000000000001" AnchorPane.leftAnchor="64.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  </AnchorPane>
+               </children>
+
+            </AnchorPane>
+           <!-- <GridPane hgap="10.0" layoutX="15.0" layoutY="9.0" prefHeight="90.0" prefWidth="462.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="9.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="44.4" minHeight="10.0" prefHeight="41.9999755859375" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="46.8000244140625" minHeight="10.0" prefHeight="46.8000244140625" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="cpsupid" prefHeight="40.0" prefWidth="143.0" promptText="Supplier ID" stylesheets="@Style/mainFormDesign694.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="main-bg" />
+                                 </styleClass>
+                              </TextField>
+                              <TextField fx:id="cpCompanyrno" layoutX="10.0" layoutY="19.0" prefHeight="40.0" prefWidth="118.0" promptText="Company Reg No" stylesheets="@Style/mainFormDesign694.css" GridPane.columnIndex="2">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="main-bg" />
+                                 </styleClass>
+                              </TextField>
+                              <TextField fx:id="cpsupname" layoutX="141.0" layoutY="19.0" prefHeight="40.0" prefWidth="143.0" promptText="Name" stylesheets="@Style/mainFormDesign694.css" GridPane.columnIndex="1">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="main-bg" />
+                                 </styleClass>
+                              </TextField>
+                              <TextField fx:id="cpsupcno" layoutX="141.0" layoutY="19.0" prefHeight="40.0" prefWidth="118.0" promptText="Contact No" stylesheets="@Style/mainFormDesign694.css" GridPane.rowIndex="1">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="main-bg" />
+                                 </styleClass>
+                              </TextField>
+                              <TextField fx:id="cpsupaddress" layoutX="10.0" layoutY="64.0" prefHeight="40.0" prefWidth="118.0" promptText="Address" stylesheets="@Style/mainFormDesign694.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="main-bg" />
+                                 </styleClass>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                        <Separator layoutY="108.0" prefHeight="2.0" prefWidth="422.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <GridPane hgap="10.0" layoutX="14.0" layoutY="125.0" prefHeight="47.0" prefWidth="468.0" vgap="10.0" AnchorPane.bottomAnchor="78.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="9.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.2" minWidth="10.0" prefWidth="223.99998779296874" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.20002441406248" minWidth="10.0" prefWidth="164.00001220703123" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           &lt;!&ndash;<children>
+                              <TextField fx:id="cpsupamount" prefHeight="40.0" prefWidth="113.0" promptText="Amount" stylesheets="@Style/mainFormDesign694.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="main-bg" />
+                                 </styleClass>
+                              </TextField>
+                              <Button fx:id="cpsupupdate" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" stylesheets="@Style/mainFormDesign694.css" text="Update" GridPane.columnIndex="1">
+                                 <styleClass>
+                                    <String fx:value="btn" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Button>
+                           </children>&ndash;&gt;
+                        </GridPane>
+                        <CheckBox fx:id="cpsupcheck" layoutX="15.0" layoutY="194.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="418.0" text="I checked whether the purchase is successfully settled." textFill="#2f2e5e">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </CheckBox>-->
+                  <!--<AnchorPane layoutX="1.0" layoutY="14.0" prefHeight="212.0" prefWidth="491.0" stylesheets="@Style/mainFormDesign694.css" AnchorPane.bottomAnchor="281.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="14.0">
+                     <children>
+                        <TableView fx:id="cptblsummery" layoutX="14.0" layoutY="16.0" prefHeight="175.0" prefWidth="460.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="16.0">
+                        <columns>
+                        <TableColumn fx:id="cpid" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="cpdate" prefWidth="75.0" text="Date" />
+                        <TableColumn fx:id="cpCompanyNo" prefWidth="75.0" text="Company No" />
+                        <TableColumn fx:id="cpqty" prefWidth="75.0" text="Quantity" />
+                        </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>-->
+         </children>
+      </AnchorPane>
+            <AnchorPane fx:id="RCOManagePanel" layoutX="202.0" layoutY="81.0" prefHeight="539.0" prefWidth="924.0" visible="false" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="81.0">
                <children>
                   <AnchorPane layoutX="7.0" layoutY="6.0" prefHeight="238.0" prefWidth="910.0" stylesheets="@Style/mainFormDesign.css" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0">
                      <styleClass>
@@ -436,7 +560,6 @@
             <AnchorPane fx:id="RCOPaymentPanel" layoutX="203.0" layoutY="80.0" prefHeight="539.0" prefWidth="924.0" visible="false" AnchorPane.bottomAnchor="28.799999999999955" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="80.0">
               <children>
                   <AnchorPane layoutX="7.0" layoutY="6.0" prefHeight="238.0" prefWidth="910.0" stylesheets="@Style/mainFormDesign.css" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0">
-
                      <styleClass>
                         <String fx:value="white-bg" />
                         <String fx:value="shadow" />
@@ -516,13 +639,7 @@
                </styleClass>
                <children>
 
-                 <!-- <TableView fx:id="cptbldetails" layoutX="21.0" layoutY="17.0" prefHeight="439.0" prefWidth="364.0" styleClass="radius" AnchorPane.bottomAnchor="74.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="17.0">
-                  <columns>
-                  <TableColumn fx:id="cpidtbl" prefWidth="75.0" text="ID" />
-                  <TableColumn fx:id="cpnametbl" prefWidth="75.0" text="name" />
-                  <TableColumn fx:id="cpaddresstbl" prefWidth="75.0" text="address" />
-                  </columns>
-                  </TableView>-->
+
                   <TableView fx:id="PM_TABLE_VIEW" layoutX="8.0" layoutY="8.0" prefHeight="210.0" prefWidth="412.0" AnchorPane.bottomAnchor="62.0" AnchorPane.topAnchor="8.0">
                      <columns>
                         <TableColumn fx:id="PM_TABLE_ID" prefWidth="75.0" text="ID" />
@@ -544,27 +661,7 @@
                   </Button>
                </children>
             </AnchorPane>
-           <!-- <AnchorPane fx:id="completePurchaseAP" layoutX="-1.0" layoutY="-6.0" prefHeight="507.0" prefWidth="512.0" stylesheets="@Style/mainFormDesign694.css" visible="false" AnchorPane.bottomAnchor="45.80000000000001" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="405.0" AnchorPane.topAnchor="-6.0">
-               <children>
-                  <AnchorPane layoutX="-2.0" layoutY="228.0" prefHeight="250.0" prefWidth="491.0" stylesheets="@Style/mainFormDesign694.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="23.0">
 
-                  <Button fx:id="PM_PYAMENT_BTN" layoutX="291.0" layoutY="235.0" mnemonicParsing="false" onAction="#updateSales" prefHeight="30.0" prefWidth="137.0" styleClass="btn" stylesheets="@Style/mainFormDesign.css" text="Complete Payment" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="37.0">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Button>
-                  <Text layoutX="8.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total : " wrappingWidth="56.234375" AnchorPane.bottomAnchor="18.482421875" AnchorPane.leftAnchor="7.434375000000003">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Label fx:id="PM_TOTAL" layoutX="64.0" layoutY="235.0" prefHeight="34.0" prefWidth="118.0" text="0.00" AnchorPane.bottomAnchor="10.600000000000001" AnchorPane.leftAnchor="64.0">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>-->
                </children>
             </AnchorPane>
 
@@ -709,93 +806,7 @@
                      </styleClass>
                      <children>
 
-                     <!--   <GridPane hgap="10.0" layoutX="15.0" layoutY="9.0" prefHeight="90.0" prefWidth="462.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="9.0">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints maxHeight="44.4" minHeight="10.0" prefHeight="41.9999755859375" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="46.8000244140625" minHeight="10.0" prefHeight="46.8000244140625" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <TextField fx:id="cpsupid" prefHeight="40.0" prefWidth="143.0" promptText="Supplier ID" stylesheets="@Style/mainFormDesign694.css">
-                                 <styleClass>
-                                    <String fx:value="radius" />
-                                    <String fx:value="main-bg" />
-                                 </styleClass>
-                              </TextField>
-                              <TextField fx:id="cpCompanyrno" layoutX="10.0" layoutY="19.0" prefHeight="40.0" prefWidth="118.0" promptText="Company Reg No" stylesheets="@Style/mainFormDesign694.css" GridPane.columnIndex="2">
-                                 <styleClass>
-                                    <String fx:value="radius" />
-                                    <String fx:value="main-bg" />
-                                 </styleClass>
-                              </TextField>
-                              <TextField fx:id="cpsupname" layoutX="141.0" layoutY="19.0" prefHeight="40.0" prefWidth="143.0" promptText="Name" stylesheets="@Style/mainFormDesign694.css" GridPane.columnIndex="1">
-                                 <styleClass>
-                                    <String fx:value="radius" />
-                                    <String fx:value="main-bg" />
-                                 </styleClass>
-                              </TextField>
-                              <TextField fx:id="cpsupcno" layoutX="141.0" layoutY="19.0" prefHeight="40.0" prefWidth="118.0" promptText="Contact No" stylesheets="@Style/mainFormDesign694.css" GridPane.rowIndex="1">
-                                 <styleClass>
-                                    <String fx:value="radius" />
-                                    <String fx:value="main-bg" />
-                                 </styleClass>
-                              </TextField>
-                              <TextField fx:id="cpsupaddress" layoutX="10.0" layoutY="64.0" prefHeight="40.0" prefWidth="118.0" promptText="Address" stylesheets="@Style/mainFormDesign694.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                 <styleClass>
-                                    <String fx:value="radius" />
-                                    <String fx:value="main-bg" />
-                                 </styleClass>
-                              </TextField>
-                           </children>
-                        </GridPane>
-                        <Separator layoutY="108.0" prefHeight="2.0" prefWidth="422.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                        <GridPane hgap="10.0" layoutX="14.0" layoutY="125.0" prefHeight="47.0" prefWidth="468.0" vgap="10.0" AnchorPane.bottomAnchor="78.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="9.0">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.2" minWidth="10.0" prefWidth="223.99998779296874" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.20002441406248" minWidth="10.0" prefWidth="164.00001220703123" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <TextField fx:id="cpsupamount" prefHeight="40.0" prefWidth="113.0" promptText="Amount" stylesheets="@Style/mainFormDesign694.css">
-                                 <styleClass>
-                                    <String fx:value="radius" />
-                                    <String fx:value="main-bg" />
-                                 </styleClass>
-                              </TextField>
-                              <Button fx:id="cpsupupdate" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" stylesheets="@Style/mainFormDesign694.css" text="Update" GridPane.columnIndex="1">
-                                 <styleClass>
-                                    <String fx:value="btn" />
-                                    <String fx:value="radius" />
-                                 </styleClass>
-                                 <GridPane.margin>
-                                    <Insets left="20.0" />
-                                 </GridPane.margin>
-                              </Button>
-                           </children>
-                        </GridPane>
-                        <CheckBox fx:id="cpsupcheck" layoutX="15.0" layoutY="194.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="418.0" text="I checked whether the purchase is successfully settled." textFill="#2f2e5e">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </CheckBox>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="1.0" layoutY="14.0" prefHeight="212.0" prefWidth="491.0" stylesheets="@Style/mainFormDesign694.css" AnchorPane.bottomAnchor="281.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="14.0">
-                     <children>
-                        <TableView fx:id="cptblsummery" layoutX="14.0" layoutY="16.0" prefHeight="175.0" prefWidth="460.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="16.0">
-                        <columns>
-                        <TableColumn fx:id="cpid" prefWidth="75.0" text="ID" />
-                        <TableColumn fx:id="cpdate" prefWidth="75.0" text="Date" />
-                        <TableColumn fx:id="cpCompanyNo" prefWidth="75.0" text="Company No" />
-                        <TableColumn fx:id="cpqty" prefWidth="75.0" text="Quantity" />
-                        </columns>
-                        </TableView>-->
+
                         <TableView fx:id="AdminManageTable" layoutX="287.0" layoutY="14.0" onMouseClicked="#selectAdmin" prefHeight="280.0" prefWidth="896.0"  AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="7.0">
                            <columns>
                               <TableColumn fx:id="AdminManageTableID" prefWidth="75.0" text="ID" />
