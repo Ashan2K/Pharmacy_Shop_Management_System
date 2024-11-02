@@ -30,7 +30,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Separator?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="1133.0" styleClass="main-bg" stylesheets="@Style/mainFormDesign.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tech.pharmacy_shop_management_system.MainAppController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="1133.0" styleClass="main-bg" stylesheets="@Style/mainFormDesign.css" xmlns="http://javafx.com/javafx/19.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tech.pharmacy_shop_management_system.MainAppController">
    <children>
       <AnchorPane layoutX="-2.0" layoutY="11.0" prefHeight="591.0" prefWidth="198.0" styleClass="nav-form" stylesheets="@Style/mainFormDesign.css" AnchorPane.bottomAnchor="-5.0" AnchorPane.topAnchor="11.0">
          <children>
@@ -84,14 +84,15 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <!--<FontAwesomeIconView fontSmoothingType="LCD" glyphName="SIGN_OUT" layoutX="853.0" layoutY="40.0" selectionFill="#ececec" selectionStart="1" size="30" wrappingWidth="31.199951171874886" AnchorPane.rightAnchor="25.800048828125114">
-               <font>
-                  <Font size="31.0" />
-               </font>
+            <ImageView fx:id="signOutIcon" onMouseClicked="#handleSignOut"  layoutX="853.0" layoutY="40.0" fitWidth="30.0" fitHeight="30.0"  AnchorPane.rightAnchor="25.8">
+               <image>
+                  <Image url="@Icones/Signout.png " />
+               </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-            </FontAwesomeIconView>-->
+            </ImageView>
+
          </children>
       </AnchorPane>
 

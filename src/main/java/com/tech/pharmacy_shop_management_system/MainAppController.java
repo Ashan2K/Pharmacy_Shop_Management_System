@@ -22,7 +22,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
@@ -30,12 +33,15 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import medicine.Medicine;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 
 import java.sql.*;
@@ -500,6 +506,9 @@ public class MainAppController implements Initializable {
 
     @FXML
     private ImageView RCO_ADD_IMAGE;
+
+    @FXML
+    private  ImageView signOutIcon;
 
     @FXML
     private TextField RCO_ADD_NAME;
@@ -997,6 +1006,7 @@ public class MainAppController implements Initializable {
 
 
     }
+
 
     private ObservableList<RemoteCustomerOrderMedicineDetails> ROCListData;
     public  void ShowData(){ // DISPLAY RCO DETAILS ON THE  FXML TABLE
@@ -2191,7 +2201,42 @@ public class MainAppController implements Initializable {
         }
 
 
-        //-------------------------------------------------------------------------------------------------------------
+    @FXML
+    private void handleSignOut() {
+        // Show confirmation dialog
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Sign Out");
+        alert.setHeaderText("Confirm Sign Out");
+        alert.setContentText("Are you sure you want to sign out?");
+
+        // Wait for user response
+        if (alert.showAndWait().orElse(ButtonType.CANCEL) == ButtonType.OK) {
+            // Close the main application window
+            Stage currentStage = (Stage) signOutIcon.getScene().getWindow();
+            currentStage.close();
+
+            // Optionally open login screen
+            openLoginScreen();
+        }
+    }
+
+    private void openLoginScreen() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/tech/pharmacy_shop_management_system/Login.fxml"));
+            Parent root = loader.load();
+
+            Stage loginStage = new Stage();
+            loginStage.setTitle("Login");
+            loginStage.setScene(new Scene(root, 600, 400)); // Set dimensions as needed
+            loginStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Failed to load login screen: " + e.getMessage());
+        }
+    }
+
+
+    //-------------------------------------------------------------------------------------------------------------
 
 
 
