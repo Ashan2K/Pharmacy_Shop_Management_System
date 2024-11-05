@@ -9,6 +9,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 
+
+
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -30,6 +32,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="1133.0" styleClass="main-bg" stylesheets="@Style/mainFormDesign.css" xmlns="http://javafx.com/javafx/19.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tech.pharmacy_shop_management_system.MainAppController">
    <children>
       <AnchorPane layoutX="0" layoutY="0" prefHeight="591.0" prefWidth="198.0" styleClass="nav-form" stylesheets="@Style/mainFormDesign.css" AnchorPane.bottomAnchor="-5.0" AnchorPane.topAnchor="11.0">
@@ -290,6 +294,34 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
+
+            <AnchorPane fx:id="placePurchasetbl" layoutX="468.0" layoutY="6.0" prefHeight="530.0" prefWidth="400.0" stylesheets="@Style/mainFormDesign694.css" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="6.0">
+               <TableView fx:id="ppTbl" layoutX="21.0" layoutY="17.0" prefHeight="439.0" prefWidth="364.0" styleClass="radius" AnchorPane.bottomAnchor="74.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="17.0">
+                  <columns>
+                     <TableColumn fx:id="ppTableId" prefWidth="120.0" text="ID" />
+                     <TableColumn fx:id="pptblName" prefWidth="120.0" text="name" />
+                     <TableColumn fx:id="ppTbleQuantity" prefWidth="120.0" text="Quantity" />
+                  </columns>
+               </TableView>
+               <Button fx:id="ppRemove" layoutX="46.0" layoutY="484.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="117.0" stylesheets="@Style/mainFormDesign694.css" text="Remove" AnchorPane.bottomAnchor="24.600000000000023">
+                  <styleClass>
+                     <String fx:value="btn" />
+                     <String fx:value="radius" />
+                     <String fx:value="white-bg"/>
+                  </styleClass>
+               </Button>
+               <Button fx:id="pptblPlacePurchase" layoutX="215.0" layoutY="484.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="117.0" stylesheets="@Style/mainFormDesign694.css" text="Place Purchase" AnchorPane.bottomAnchor="24.600000000000023">
+                  <styleClass>
+                     <String fx:value="btn" />
+                     <String fx:value="radius" />
+                  </styleClass>
+               </Button>
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="radius" />
+                  <String fx:value="shadow" />
+               </styleClass>
+            </AnchorPane>
             <Button fx:id="ppbtn" layoutX="49.0" layoutY="509.0" mnemonicParsing="false" onAction="#controlPanel" prefHeight="30.0" prefWidth="117.0" stylesheets="@Style/mainFormDesign694.css" text="Place Purchase" AnchorPane.bottomAnchor="7.600000000000023">
                <styleClass>
                   <String fx:value="btn" />
@@ -300,29 +332,9 @@
                <styleClass>
                   <String fx:value="btn" />
                   <String fx:value="radius" />
+                  <String fx:value="white-bg"/>
                </styleClass>
             </Button>
-            <AnchorPane fx:id="placePurchasetbl" layoutX="468.0" layoutY="6.0" prefHeight="530.0" prefWidth="400.0" stylesheets="@Style/mainFormDesign694.css" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="6.0">
-               <TableView fx:id="ppTbl" layoutX="21.0" layoutY="17.0" prefHeight="439.0" prefWidth="364.0" styleClass="radius" AnchorPane.bottomAnchor="74.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="17.0">
-                  <columns>
-                     <TableColumn fx:id="ppTableId" prefWidth="75.0" text="ID" />
-                     <TableColumn fx:id="pptblName" prefWidth="75.0" text="name" />
-                     <TableColumn fx:id="ppTbleQuantity" prefWidth="75.0" text="Quantity" />
-                  </columns>
-               </TableView>
-               <Button fx:id="ppRemove" layoutX="46.0" layoutY="484.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="117.0" stylesheets="@Style/mainFormDesign694.css" text="Remove" AnchorPane.bottomAnchor="24.600000000000023">
-                  <styleClass>
-                     <String fx:value="btn" />
-                     <String fx:value="radius" />
-                  </styleClass>
-               </Button>
-               <Button fx:id="pptblPlacePurchase" layoutX="215.0" layoutY="484.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="117.0" stylesheets="@Style/mainFormDesign694.css" text="Place Purchase" AnchorPane.bottomAnchor="24.600000000000023">
-                  <styleClass>
-                     <String fx:value="btn" />
-                     <String fx:value="radius" />
-                  </styleClass>
-               </Button>
-            </AnchorPane>
 
          <!--<TableView fx:id="cptbldetails" layoutX="21.0" layoutY="17.0" prefHeight="439.0" prefWidth="364.0" styleClass="radius" AnchorPane.bottomAnchor="74.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="17.0">
                   <columns>
@@ -331,7 +343,7 @@
                   <TableColumn fx:id="cpaddresstbl" prefWidth="75.0" text="address" />
                   </columns>
                   </TableView>-->
-          <AnchorPane fx:id="completePurchaseAP"  layoutX="-1.0" layoutY="-6.0"  prefHeight="507.0" prefWidth="512.0" stylesheets="@Style/mainFormDesign694.css" visible="false" AnchorPane.bottomAnchor="45.80000000000001" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="405.0" AnchorPane.topAnchor="-6.0">
+          <!--<AnchorPane fx:id="completePurchaseAP"  layoutX="-1.0" layoutY="-6.0"  prefHeight="507.0" prefWidth="512.0" stylesheets="@Style/mainFormDesign694.css" visible="false" AnchorPane.bottomAnchor="45.80000000000001" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="405.0" AnchorPane.topAnchor="-6.0">
                <children>
                   <AnchorPane layoutX="-2.0" layoutY="228.0" prefHeight="250.0" prefWidth="491.0" stylesheets="@Style/mainFormDesign694.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="23.0">
                   <Button fx:id="PM_PYAMENT_BTN" layoutX="291.0" layoutY="235.0" mnemonicParsing="false" onAction="#updateSales" prefHeight="30.0" prefWidth="137.0" styleClass="btn" stylesheets="@Style/mainFormDesign.css" text="Complete Payment" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="37.0">
@@ -353,7 +365,7 @@
                </children>
 
             </AnchorPane>
-           <!-- <GridPane hgap="10.0" layoutX="15.0" layoutY="9.0" prefHeight="90.0" prefWidth="462.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="9.0">
+           <GridPane hgap="10.0" layoutX="15.0" layoutY="9.0" prefHeight="90.0" prefWidth="462.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="9.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -405,7 +417,7 @@
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
-                           &lt;!&ndash;<children>
+                          <children>
                               <TextField fx:id="cpsupamount" prefHeight="40.0" prefWidth="113.0" promptText="Amount" stylesheets="@Style/mainFormDesign694.css">
                                  <styleClass>
                                     <String fx:value="radius" />
@@ -421,14 +433,14 @@
                                     <Insets left="20.0" />
                                  </GridPane.margin>
                               </Button>
-                           </children>&ndash;&gt;
+                           </children>
                         </GridPane>
                         <CheckBox fx:id="cpsupcheck" layoutX="15.0" layoutY="194.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="418.0" text="I checked whether the purchase is successfully settled." textFill="#2f2e5e">
                            <font>
                               <Font size="16.0" />
                            </font>
-                        </CheckBox>-->
-                  <!--<AnchorPane layoutX="1.0" layoutY="14.0" prefHeight="212.0" prefWidth="491.0" stylesheets="@Style/mainFormDesign694.css" AnchorPane.bottomAnchor="281.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="14.0">
+                        </CheckBox>
+                  <AnchorPane layoutX="1.0" layoutY="14.0" prefHeight="212.0" prefWidth="491.0" stylesheets="@Style/mainFormDesign694.css" AnchorPane.bottomAnchor="281.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="14.0">
                      <children>
                         <TableView fx:id="cptblsummery" layoutX="14.0" layoutY="16.0" prefHeight="175.0" prefWidth="460.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="16.0">
                         <columns>
@@ -653,12 +665,7 @@
                      </columnResizePolicy>
                   </TableView>
 
-                  <Button fx:id="cptblbtn" layoutX="215.0" layoutY="484.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="152.0" stylesheets="@Style/mainFormDesign694.css" text="Complete Purchase" AnchorPane.bottomAnchor="25.0">
-                     <styleClass>
-                        <String fx:value="btn" />
-                        <String fx:value="radius" />
-                     </styleClass>
-                  </Button>
+
                </children>
             </AnchorPane>
 
@@ -994,6 +1001,189 @@
                         <PasswordField fx:id="StaffManagePassword" layoutX="640.0" layoutY="60.0" promptText="Password" styleClass="textfield" stylesheets="@Style/DCOStyles/DCOstyles.css" AnchorPane.bottomAnchor="115.0" AnchorPane.leftAnchor="640.0" />
                      </children>
 
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="irViewAP" layoutX="208.0" layoutY="80.0" prefHeight="525.0" prefWidth="916.0" visible="false" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <AnchorPane fx:id="purchareview" layoutY="6.0" prefHeight="428.0" prefWidth="1103.0" visible="false" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="6.0">
+               <children>
+                  <AnchorPane fx:id="inventorytblAP" layoutX="20.0" layoutY="22.0" prefHeight="222.0" prefWidth="856.0" stylesheets="@Style/mainFormDesign.css" AnchorPane.bottomAnchor="226.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="6.0">
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                        <String fx:value="radius" />
+                     </styleClass>
+                     <children>
+                        <TableView fx:id="inventorytbl" layoutX="17.0" layoutY="50.0" onMouseClicked="#SelectionMedicineData" prefHeight="164.0" prefWidth="819.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0">
+                           <columns>
+                              <TableColumn fx:id="itblid" prefWidth="75.0" text="ID" />
+                              <TableColumn fx:id="itblname" prefWidth="75.0" text="Name" />
+                              <TableColumn fx:id="itblquantity" prefWidth="75.0" text="Quantity" />
+                              <TableColumn fx:id="itblManufacturer" prefWidth="75.0" text="Manufacturer" />
+                              <TableColumn fx:id="itblexpireDate" prefWidth="75.0" text="Expire_Date" />
+                              <TableColumn fx:id="itblprice" prefWidth="75.0" text="Price" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <TextField fx:id="isearch" layoutX="20.0" layoutY="10.0" onAction="#ShowMedicineData" onKeyReleased="#ShowMedicineDataSearch" prefHeight="29.0" prefWidth="268.0" promptText="Search by ID" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="20.0" layoutY="265.0" prefHeight="195.0" prefWidth="856.0" stylesheets="@Style/mainFormDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="26.0">
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                        <String fx:value="radius" />
+                     </styleClass>
+                     <children>
+                        <TextField fx:id="irid" layoutX="11.0" layoutY="14.0" prefHeight="30.0" prefWidth="257.0" promptText="Read ID" stylesheets="@Style/mainFormDesign.css" />
+                        <TextField fx:id="imname" layoutX="295.0" layoutY="14.0" prefHeight="29.0" prefWidth="257.0" promptText="Medicine Name" stylesheets="@Style/mainFormDesign.css" />
+                        <TextField fx:id="iprice" layoutX="11.0" layoutY="62.0" prefHeight="30.0" prefWidth="257.0" promptText="Price" stylesheets="@Style/mainFormDesign.css" />
+                        <TextField fx:id="istoke" layoutX="295.0" layoutY="63.0" prefHeight="30.0" prefWidth="257.0" promptText="Stoke" stylesheets="@Style/mainFormDesign.css" />
+                        <Button fx:id="iaddbtn" layoutX="14.0" layoutY="118.0" mnemonicParsing="false" onAction="#insertMedicineData" prefHeight="30.0" prefWidth="98.0" styleClass="btn" stylesheets="@Style/mainFormDesign.css" text="Add">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="iupdatebtn" layoutX="137.0" layoutY="118.0" mnemonicParsing="false" onAction="#updateMedicineData" prefHeight="30.0" prefWidth="98.0" styleClass="btn" stylesheets="@Style/mainFormDesign.css" text="Update">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="imanufacture" layoutX="577.0" layoutY="14.0" prefHeight="29.0" prefWidth="257.0" promptText="Manufacture" stylesheets="@Style/mainFormDesign.css" />
+                        <TextField fx:id="iedate" layoutX="577.0" layoutY="63.0" prefHeight="30.0" prefWidth="257.0" promptText="Expire Date" stylesheets="@Style/mainFormDesign.css" />
+                        <Button fx:id="ideletebtn" layoutX="264.0" layoutY="118.0" mnemonicParsing="false" onAction="#deleteMedicineData" prefHeight="30.0" prefWidth="98.0" styleClass="btn" stylesheets="@Style/mainFormDesign.css" text="Delete">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="iclearbtn" layoutX="387.0" layoutY="118.0" mnemonicParsing="false" onAction="#ClearDataMedicine" prefHeight="30.0" prefWidth="98.0" styleClass="btn" stylesheets="@Style/mainFormDesign.css" text="Clear">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <!--<Separator layoutX="1.0" layoutY="163.0" prefHeight="1.0" prefWidth="856.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect></Separator>-->
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <Button fx:id="incentorybtn" layoutX="35.0" layoutY="471.0" mnemonicParsing="false" onAction="#controlPanel" prefHeight="30.0" prefWidth="98.0" styleClass="btn" stylesheets="@Style/mainFormDesign.css" text="Inventory" AnchorPane.bottomAnchor="17.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="reportbtn" layoutX="167.0" layoutY="478.0" mnemonicParsing="false" onAction="#controlPanel" onMouseClicked="#ShowReportData" prefHeight="30.0" prefWidth="98.0" styleClass="btn" stylesheets="@Style/mainFormDesign.css" text="Report" AnchorPane.bottomAnchor="17.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <AnchorPane fx:id="reportAP" layoutX="7.0" layoutY="16.0" prefHeight="450.0" prefWidth="889.0" visible="false" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="6.0">
+               <children>
+                  <AnchorPane fx:id="rcodcoreporttbl" layoutX="20.0" layoutY="22.0" prefHeight="260.0" prefWidth="862.0" stylesheets="@Style/mainFormDesign.css" visible="false" AnchorPane.bottomAnchor="184.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="6.0">
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                        <String fx:value="radius" />
+                     </styleClass>
+                     <children>
+                        <TableView fx:id="rcodcotbl" layoutX="17.0" layoutY="20.0" prefHeight="175.0" prefWidth="819.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <columns>
+                              <TableColumn fx:id="rcodcoid" prefWidth="75.0" text="ID" />
+                              <TableColumn fx:id="rcodcodate" prefWidth="75.0" text="Date" />
+                              <TableColumn fx:id="rcodcoqnty" prefWidth="75.0" text="Quantity" />
+                              <TableColumn fx:id="rcodcosales" prefWidth="75.0" text="Sales" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="20.0" layoutY="276.0" prefHeight="144.0" prefWidth="862.0" stylesheets="@Style/mainFormDesign.css" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="7.0">
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                        <String fx:value="radius" />
+                     </styleClass>
+                     <children>
+                        <Button fx:id="rcorbtn" layoutX="23.0" layoutY="28.0" mnemonicParsing="false" onAction="#controlPanel" prefHeight="30.0" prefWidth="126.0" styleClass="btn" stylesheets="@Style/mainFormDesign.css" text="RCO Report">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="dcorbtn" layoutX="179.0" layoutY="28.0" mnemonicParsing="false" onAction="#controlPanel" onMouseClicked="#ShowReportDataDCO" prefHeight="30.0" prefWidth="126.0" styleClass="btn" stylesheets="@Style/mainFormDesign.css" text="DCO Report">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="prbtn" layoutX="333.0" layoutY="28.0" mnemonicParsing="false" onAction="#controlPanel" onMouseClicked="#ShowReportPurchase" prefHeight="30.0" prefWidth="126.0" styleClass="btn" stylesheets="@Style/mainFormDesign.css" text="Purchase Report">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="printbtnreportPR" layoutX="726.0" layoutY="93.0" mnemonicParsing="false" onAction="#getReportPurchase" prefHeight="30.0" prefWidth="105.0" styleClass="btn" stylesheets="@Style/mainFormDesign.css" text="Print Purchase" AnchorPane.bottomAnchor="21.0" AnchorPane.rightAnchor="31.0">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <!--<Separator layoutX="4.0" layoutY="82.0" prefHeight="3.0" prefWidth="862.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Separator>-->
+                        <Button fx:id="printbtnreportDCO" layoutX="608.0" layoutY="93.0" mnemonicParsing="false" onAction="#getReportDOC" prefHeight="30.0" prefWidth="98.0" styleClass="btn" stylesheets="@Style/mainFormDesign.css" text="Print DCO" AnchorPane.bottomAnchor="21.0" AnchorPane.rightAnchor="156.0">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="printbtnreportRCO" layoutX="488.0" layoutY="93.0" mnemonicParsing="false" onAction="#getReportROC" prefHeight="30.0" prefWidth="98.0" styleClass="btn" stylesheets="@Style/mainFormDesign.css" text="Print RCO" AnchorPane.bottomAnchor="21.0" AnchorPane.rightAnchor="276.0">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="prtblAP" layoutX="20.0" layoutY="9.0" prefHeight="260.0" prefWidth="862.0" stylesheets="@Style/mainFormDesign.css" AnchorPane.bottomAnchor="184.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="6.0">
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                        <String fx:value="radius" />
+                     </styleClass>
+                     <children>
+                        <TableView fx:id="prtbl" layoutX="17.0" layoutY="16.0" prefHeight="229.0" prefWidth="787.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="16.0">
+                           <columns>
+                              <TableColumn fx:id="prid" prefWidth="75.0" text="ID" />
+                              <TableColumn fx:id="prdate" prefWidth="75.0" text="Date &amp; Time" />
+                              <TableColumn fx:id="prqnty" prefWidth="75.0" text="Quantity" />
+                              <TableColumn fx:id="prsupplierid" prefWidth="75.0" text="Supplier ID" />
+                              <TableColumn fx:id="prpurchase" prefWidth="75.0" text="Purchase" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
                   </AnchorPane>
                </children>
             </AnchorPane>

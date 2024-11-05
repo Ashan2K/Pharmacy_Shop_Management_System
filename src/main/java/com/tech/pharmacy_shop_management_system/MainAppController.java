@@ -14,6 +14,11 @@ import User.Admin;
 import User.Staff;
 import User.UserInfo;
 
+import javafx.scene.effect.Lighting;
+import javafx.scene.effect.Light;
+import javafx.scene.effect.Shadow;
+
+
 import RemortCustomer.RemoteCustomerOrderShippingDetails;
 import SalesTransaction.Sales;
 
@@ -35,6 +40,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebView;
@@ -428,7 +434,6 @@ public class MainAppController implements Initializable {
     private WebView webView;
 
     @FXML
-
     private AnchorPane completePurchaseAP;
 
     private SpinnerValueFactory<Integer> spin;
@@ -684,6 +689,7 @@ public class MainAppController implements Initializable {
                      RCOPaymentPanel.setVisible(false);
                      DCOBackground.setVisible(false);
                      UserManageBackground.setVisible(false);
+                     purchaseAp.setVisible(false);
                      Email email = new  Email(webView);
                      email.emailServer();
                  }else if (event.getSource() == RCO_BTN ) { // navigate into remote customer oder page
@@ -698,18 +704,21 @@ public class MainAppController implements Initializable {
 
                      DCOBackground.setVisible(false);
                      UserManageBackground.setVisible(false);
+                     purchaseAp.setVisible(false);
 
               }else if(event.getSource() ==RCOPaymentBtn){ // navigate into remote customer payment page
                     //System.out.println("hi");
                      RCOManagePanel.setVisible(false);
                      WEB_VIEW.setVisible(false);
                      RCOPaymentPanel.setVisible(true);
+                     purchaseAp.setVisible(false);
 
                      //PM_PYAMENT_BTN.setDisable(true);
                      ShowPData();
 
                      DCOBackground.setVisible(false);
                      UserManageBackground.setVisible(false);
+                     purchaseAp.setVisible(false);
                  }else if(event.getSource()==DCOManageButton){ // navigate into Direct customer order page
                      getMedicine();    //Load stock medicine
 
@@ -720,6 +729,7 @@ public class MainAppController implements Initializable {
                      WEB_VIEW.setVisible(false);
                      UserManageBackground.setVisible(false);
                      DCOReadIDTextField.requestFocus();
+                     purchaseAp.setVisible(false);
                  }else if(event.getSource()==UserManageButton){ // navigate into User Manage page
                      getStaff();
 
@@ -730,6 +740,7 @@ public class MainAppController implements Initializable {
                      UserManageBackground.setVisible(true);
                      StaffManageBackground.setVisible(true);
                      AdminManageBackground.setVisible(false);
+                     purchaseAp.setVisible(false);
                  }else if (event.getSource()== purchasebtn) {
                      RCOManagePanel.setVisible(false);
                      WEB_VIEW.setVisible(false);
@@ -738,8 +749,8 @@ public class MainAppController implements Initializable {
                      UserManageBackground.setVisible(false);
 
                      purchaseAp.setVisible(true);
-                     placePurchaseAP.setVisible(false);
-                     completePurchaseAP.setVisible(false);
+                     placePurchaseAP.setVisible(true);
+                     //completePurchaseAP.setVisible(false);
 
 
 
@@ -749,8 +760,7 @@ public class MainAppController implements Initializable {
                      //purchaseAp.setVisible(true);
                      placePurchasetbl.setVisible(false);
                      placePurchaseAP.setVisible(false);
-                     completePurchaseTbl.setVisible(false);
-                     completePurchaseAP.setVisible(false);
+                     completePurchaseAP.setVisible(true);
 
 
                  }
@@ -2287,6 +2297,42 @@ private Label dateTimeLabel;
             e.printStackTrace();
             System.err.println("Failed to load login screen: " + e.getMessage());
         }
+    }
+
+    public void ShowReportDataDCO(MouseEvent mouseEvent) {
+    }
+
+    public void ShowReportPurchase(MouseEvent mouseEvent) {
+    }
+
+    public void getReportPurchase(ActionEvent actionEvent) {
+    }
+
+    public void ShowReportData(MouseEvent mouseEvent) {
+    }
+
+    public void getReportDOC(ActionEvent actionEvent) {
+    }
+
+    public void getReportROC(ActionEvent actionEvent) {
+    }
+
+    public void deleteMedicineData(ActionEvent actionEvent) {
+    }
+
+    public void ClearDataMedicine(ActionEvent actionEvent) {
+    }
+
+    public void updateMedicineData(ActionEvent actionEvent) {
+    }
+
+    public void insertMedicineData(ActionEvent actionEvent) {
+    }
+
+    public void ShowMedicineDataSearch(KeyEvent keyEvent) {
+    }
+
+    public void SelectionMedicineData(MouseEvent mouseEvent) {
     }
 
 

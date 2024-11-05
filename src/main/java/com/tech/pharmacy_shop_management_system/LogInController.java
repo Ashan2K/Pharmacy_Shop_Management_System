@@ -157,12 +157,23 @@ public class LogInController {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("MainFrame.fxml"));
             Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-            Scene mainFrame = new Scene(root);
+
+            // Set the screen size
+            Scene mainFrame = new Scene(root, 1200, 800); // Adjust the width and height as needed
             stage.setScene(mainFrame);
+
+            // Lock the window size
+            stage.setResizable(false);
+
+            // Center the window on the screen
+            stage.centerOnScreen();
+
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
     @FXML
     public void UloginOnAction(ActionEvent event) {
